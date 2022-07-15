@@ -1,0 +1,248 @@
+<?xml version="1.0" ?>
+<robot name="Mecanum_BOT" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find Mecanum_BOT_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find Mecanum_BOT_description)/urdf/Mecanum_BOT.trans" />
+<xacro:include filename="$(find Mecanum_BOT_description)/urdf/Mecanum_BOT.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="-0.09613687705983327 -0.0901015426235175 -0.05749254764089324" rpy="0 0 0"/>
+    <mass value="0.16202598075878857"/>
+    <inertia ixx="0.000884" iyy="0.001212" izz="0.000337" ixy="0.0" iyz="1e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://Mecanum_BOT_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://Mecanum_BOT_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_front_1">
+  <inertial>
+    <origin xyz="0.02109440662747067 -0.013593183811456369 -0.0076957393506719984" rpy="0 0 0"/>
+    <mass value="0.06361248676635128"/>
+    <inertia ixx="1e-05" iyy="1.7e-05" izz="1.7e-05" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.166137 0.102603 0.126457" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://Mecanum_BOT_description/meshes/left_front_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.166137 0.102603 0.126457" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://Mecanum_BOT_description/meshes/left_front_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_front_1">
+  <inertial>
+    <origin xyz="-0.021094160747217303 -0.013593183811456369 -0.007804959748854368" rpy="0 0 0"/>
+    <mass value="0.06361248676635124"/>
+    <inertia ixx="1e-05" iyy="1.7e-05" izz="1.7e-05" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.026137 0.102603 0.126457" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://Mecanum_BOT_description/meshes/right_front_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.026137 0.102603 0.126457" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://Mecanum_BOT_description/meshes/right_front_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_back_1">
+  <inertial>
+    <origin xyz="-0.021094160747217074 -0.01359318381145655 0.00769504025114574" rpy="0 0 0"/>
+    <mass value="0.06361248676635124"/>
+    <inertia ixx="1e-05" iyy="1.7e-05" izz="1.7e-05" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.026137 0.102603 -0.023043" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://Mecanum_BOT_description/meshes/right_back_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.026137 0.102603 -0.023043" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://Mecanum_BOT_description/meshes/right_back_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_back_1">
+  <inertial>
+    <origin xyz="0.02109440662747089 -0.013593183811456633 -0.0076957393506719395" rpy="0 0 0"/>
+    <mass value="0.06361248676635121"/>
+    <inertia ixx="1e-05" iyy="1.7e-05" izz="1.7e-05" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.166137 0.102603 -0.038543" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://Mecanum_BOT_description/meshes/left_back_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.166137 0.102603 -0.038543" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://Mecanum_BOT_description/meshes/left_back_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_front_wheel_1">
+  <inertial>
+    <origin xyz="-0.030656450570307386 1.6747393109250996e-06 8.586632723739385e-07" rpy="0 0 0"/>
+    <mass value="0.15115036053896602"/>
+    <inertia ixx="5.4e-05" iyy="4.1e-05" izz="4.1e-05" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.172137 0.123026 0.134207" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://Mecanum_BOT_description/meshes/left_front_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.172137 0.123026 0.134207" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://Mecanum_BOT_description/meshes/left_front_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_back_wheel_1">
+  <inertial>
+    <origin xyz="-0.030656450570321098 -2.0840838319824417e-06 8.586632726861887e-07" rpy="0 0 0"/>
+    <mass value="0.4702455661216154"/>
+    <inertia ixx="0.000167" iyy="0.000127" izz="0.000127" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.172137 0.123026 -0.030793" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://Mecanum_BOT_description/meshes/left_back_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.172137 0.123026 -0.030793" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://Mecanum_BOT_description/meshes/left_back_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_back_wheel_1">
+  <inertial>
+    <origin xyz="0.030656696450539457 -2.0840838093200142e-06 8.586632902554681e-07" rpy="0 0 0"/>
+    <mass value="0.151150360538966"/>
+    <inertia ixx="5.4e-05" iyy="4.1e-05" izz="4.1e-05" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.020137 0.123026 -0.030793" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://Mecanum_BOT_description/meshes/right_back_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.020137 0.123026 -0.030793" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://Mecanum_BOT_description/meshes/right_back_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_front_wheel_1">
+  <inertial>
+    <origin xyz="0.030656696450552964 1.674739333393238e-06 8.586632544715922e-07" rpy="0 0 0"/>
+    <mass value="0.1511503605390908"/>
+    <inertia ixx="5.4e-05" iyy="4.1e-05" izz="4.1e-05" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.020137 0.123026 0.134207" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://Mecanum_BOT_description/meshes/right_front_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.020137 0.123026 0.134207" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://Mecanum_BOT_description/meshes/right_front_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Rigid5" type="fixed">
+  <origin xyz="-0.166137 -0.102603 -0.126457" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="left_front_1"/>
+</joint>
+
+<joint name="Rigid6" type="fixed">
+  <origin xyz="-0.026137 -0.102603 -0.126457" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="right_front_1"/>
+</joint>
+
+<joint name="Rigid7" type="fixed">
+  <origin xyz="-0.026137 -0.102603 0.023043" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="right_back_1"/>
+</joint>
+
+<joint name="Rigid8" type="fixed">
+  <origin xyz="-0.166137 -0.102603 0.038543" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="left_back_1"/>
+</joint>
+
+<joint name="Rev9" type="continuous">
+  <origin xyz="-0.006 -0.020423 -0.00775" rpy="0 0 0"/>
+  <parent link="left_front_1"/>
+  <child link="left_front_wheel_1"/>
+  <axis xyz="-1.0 -0.0 0.0"/>
+</joint>
+
+<joint name="Rev10" type="continuous">
+  <origin xyz="-0.006 -0.020423 -0.00775" rpy="0 0 0"/>
+  <parent link="left_back_1"/>
+  <child link="left_back_wheel_1"/>
+  <axis xyz="-1.0 -0.0 0.0"/>
+</joint>
+
+<joint name="Rev11" type="continuous">
+  <origin xyz="0.006 -0.020423 0.00775" rpy="0 0 0"/>
+  <parent link="right_back_1"/>
+  <child link="right_back_wheel_1"/>
+  <axis xyz="1.0 0.0 -0.0"/>
+</joint>
+
+<joint name="Rev12" type="continuous">
+  <origin xyz="0.006 -0.020423 -0.00775" rpy="0 0 0"/>
+  <parent link="right_front_1"/>
+  <child link="right_front_wheel_1"/>
+  <axis xyz="1.0 0.0 -0.0"/>
+</joint>
+
+</robot>
